@@ -14,7 +14,6 @@ public class Main {
             String nome;
 
 
-
             while ((nome = br.readLine()) != null) {
                 tabela1.inserirHash(nome);
                 tabela2.inserirHash(nome);
@@ -23,11 +22,13 @@ public class Main {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
 
-
+        System.out.println("\n================== RESULTADOS ==================");
         System.out.println("\nColisões Função 1: "+ tabela1.getColisoes());
         System.out.println("Colisões Função 2: "+ tabela2.getColisoes());
-        System.out.println("\n========================================");
+        System.out.println("================================================");
 
+        tabela1.colisoesPorIndex();
+        tabela2.colisoesPorIndex();
 
     }
 }
