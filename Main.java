@@ -4,12 +4,15 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
+        // inicializa a tabela com o valor de 32
         int tamanho = 32;
+        // cria 2 tabelas, uma para cara funcao hash
         HashGeral tabela1 = new FuncHash1(tamanho);
         HashGeral tabela2 = new FuncHash2(tamanho);
 
         String caminhoArquivo = "female_names.txt";
 
+        // le o arquivo de 1bilhao de nomes
         try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
             String nome;
 
