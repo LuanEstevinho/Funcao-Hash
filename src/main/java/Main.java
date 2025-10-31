@@ -40,11 +40,13 @@ public class Main {
             System.out.println("Tempo de inserção - Função 2: " + (fim2 - inicio2) + " ns");
 
             // teste de busca para tempo em ns
+            //func 1
             String busca = "Amanda";
             long inicioBusca1 = System.nanoTime();
             boolean achou1 = tabela1.buscarHash(busca);
             long fimBusca1 = System.nanoTime();
 
+            //func 2
             long inicioBusca2 = System.nanoTime();
             boolean achou2 = tabela2.buscarHash(busca);
             long fimBusca2 = System.nanoTime();
@@ -73,6 +75,13 @@ public class Main {
             System.out.println("Tamanho final tabela 1: " + tabela1.tamanho);
             System.out.println("Tamanho final tabela 2: " + tabela2.tamanho);
             System.out.println("================================================");
+
+            // Mostra colisões por posição de cada função
+            //System.out.println("\n========== FUNÇÃO 1 - Colisões por Índice ==========");
+            //tabela1.colisoesPorIndex();
+            
+            //System.out.println("\n========== FUNÇÃO 2 - Colisões por Índice ==========");
+            //tabela2.colisoesPorIndex();
 
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());

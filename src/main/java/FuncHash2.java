@@ -17,6 +17,6 @@ public class FuncHash2 extends HashGeral{
 
         }
         // usa math.abs para sempre retornar o valor absoluto do hash (tirar sinal negativo, letra...)
-        return Math.abs(hash) % tamanho; // ex: 274509 % 32 = 13 -> então 'Ana' vai para o indice 13
+        return Math.abs(hash) % tamanho; // ex: 274509 % 32 = 13 -> então 'Ana' vai para o indice 13 se o tamanho for 32, muda de acordo com o tamanho
     }
 }

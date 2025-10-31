@@ -16,6 +16,6 @@ public class FuncHash1 extends HashGeral {
             valorHash += c; //ex 'A' = 65 'n' = 110 'a' = 97 → 65 + 110 + 97 = 272
         }
         // retorna ele já em forma de indice
-        return valorHash % tamanho; //ex 272 % 32 = 16 -> então 'Ana' vai para o indice 16
+        return valorHash % tamanho; //ex 272 % 32 = 16 -> então 'Ana' vai para o indice 16, se o tamanho for 32, muda de acordo com o tamanho
     }
 }
