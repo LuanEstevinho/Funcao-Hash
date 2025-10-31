@@ -13,9 +13,9 @@ public class FuncHash1 extends HashGeral {
         // itera na chave com toCharArray() para arrecadar cada elemento
         for (char c : chave.toCharArray()) {
             // soma os elementos
-            valorHash += c;
+            valorHash += c; //ex 'A' = 65 'n' = 110 'a' = 97 → 65 + 110 + 97 = 272
         }
         // retorna ele já em forma de indice
-        return valorHash % tamanho;
+        return valorHash % tamanho; //ex 272 % 32 = 16 -> então 'Ana' vai para o indice 16
     }
 }
