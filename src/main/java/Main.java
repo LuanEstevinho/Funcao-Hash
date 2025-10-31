@@ -1,18 +1,19 @@
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) {
+        // inicializa a tabela com o valor de 32
         int tamanho = 32;
+        // cria 2 tabelas, uma para cara funcao hash
         HashGeral tabela1 = new FuncHash1(tamanho);
         HashGeral tabela2 = new FuncHash2(tamanho);
 
-        String caminhoArquivo = "/female_names.txt";
+        String caminhoArquivo = "female_names.txt";
 
-        try (InputStream is = Main.class.getResourceAsStream(caminhoArquivo);
-             BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+        // le o arquivo de 1bilhao de nomes
+        try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
             String nome;
 
             // para medir o tempo de insercao
@@ -23,8 +24,8 @@ public class Main {
             long fim1 = System.nanoTime();
 
             // abrir arquivo denovo para segunda tabela
-            InputStream is2 = Main.class.getResourceAsStream(caminhoArquivo);
-            BufferedReader br2 = new BufferedReader(new InputStreamReader(is2));
+            br.close();
+            BufferedReader br2 = new BufferedReader(new FileReader(caminhoArquivo));
 
             long inicio2 = System.nanoTime();
             while ((nome = br2.readLine()) != null) {
